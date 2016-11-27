@@ -1,7 +1,10 @@
 package com.leetcode;
 
+import java.util.*;
+
 /**
  * Created by mdeivasi on 27/11/16.
+ * https://leetcode.com/articles/two-sum/#approach-2-two-pass-hash-table-accepted
  */
 public class TwoSum {
     public static void main(String args[]) {
@@ -10,7 +13,7 @@ public class TwoSum {
 
         int[] result = brutal_way(numArray, target);
 
-
+        result = using_hashtable(numArray, target);
 
     }
 
@@ -27,6 +30,47 @@ public class TwoSum {
                 }
             }
         }
+        return null;
+    }
+
+    //using hash table o(2n)
+    static int[] using_hashtable(int[] arr, int target) {
+        Hashtable availableNumbers = new Hashtable();
+        int[] result = new int[2];
+        int next_number = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            availableNumbers.put(arr[i], i);
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            next_number = target - arr[i];
+            if (availableNumbers.containsKey(next_number)) {
+                result[0] = i;
+                result[1] = (int) availableNumbers.get(next_number);
+                return result;
+            }
+        }
+
+        return null;
+    }
+
+    //using hash table o(n)
+    static int[] using_hashtable_oneshot(int[] arr, int target) {
+        Hashtable availableNumbers = new Hashtable();
+        int[] result = new int[2];
+        int next_number = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            next_number = target - arr[i];
+            if (availableNumbers.containsKey(next_number)) {
+                result[0] = i;
+                result[1] = (int) availableNumbers.get(next_number);
+                return result;
+            }
+            availableNumbers.put(arr[i], i);
+        }
+
         return null;
     }
 }
