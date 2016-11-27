@@ -14,7 +14,7 @@ public class TwoSum {
         int[] result = brutal_way(numArray, target);
 
         result = using_hashtable(numArray, target);
-
+        result = using_hashtable_oneshot(numArray, target);
     }
 
     //Brutal force way o(n^2) - not acceptable
@@ -46,8 +46,8 @@ public class TwoSum {
         for (int i = 0; i < arr.length; i++) {
             next_number = target - arr[i];
             if (availableNumbers.containsKey(next_number)) {
-                result[0] = i;
-                result[1] = (int) availableNumbers.get(next_number);
+                result[0] = (int) availableNumbers.get(next_number);
+                result[1] = i;
                 return result;
             }
         }
