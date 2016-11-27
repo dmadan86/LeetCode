@@ -18,7 +18,7 @@ public class TwoSum {
     }
 
     //Brutal force way o(n^2) - not acceptable
-    static int[] brutal_way(int[] arr, int target) {
+    private static int[] brutal_way(int[] arr, int target) {
         int[] result = new int[2];
 
         for (int i = 0; i < arr.length; i++) {
@@ -34,7 +34,7 @@ public class TwoSum {
     }
 
     //using hash table o(2n)
-    static int[] using_hashtable(int[] arr, int target) {
+    private static int[] using_hashtable(int[] arr, int target) {
         Hashtable availableNumbers = new Hashtable();
         int[] result = new int[2];
         int next_number = 0;
@@ -56,7 +56,7 @@ public class TwoSum {
     }
 
     //using hash table o(n)
-    static int[] using_hashtable_oneshot(int[] arr, int target) {
+    private static int[] using_hashtable_oneshot(int[] arr, int target) {
         Hashtable availableNumbers = new Hashtable();
         int[] result = new int[2];
         int next_number = 0;
