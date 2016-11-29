@@ -35,7 +35,7 @@ public class TwoSum {
 
     //using hash table o(2n)
     private static int[] using_hashtable(int[] arr, int target) {
-        Hashtable availableNumbers = new Hashtable();
+        Hashtable<Integer, Integer> availableNumbers = new Hashtable<>();
         int[] result = new int[2];
         int next_number = 0;
 
@@ -57,7 +57,7 @@ public class TwoSum {
 
     //using hash table o(n)
     private static int[] using_hashtable_oneshot(int[] arr, int target) {
-        Hashtable availableNumbers = new Hashtable();
+        Hashtable<Integer, Integer> availableNumbers = new Hashtable<>();
         int[] result = new int[2];
         int next_number = 0;
 
