@@ -57,3 +57,11 @@ nums2 = [3, 4]
 The median is (2 + 3)/2 = 2.5
 ```
 
+*[Reverse Integer](https://leetcode.com/problems/reverse-integer/)- Solution [java](https://github.com/dmadan86/LeetCode/blob/master/src/com/leetcode/Reverse_Integer.java)
+
+```
+Reverse digits of an integer.
+
+Example1: x = 123, return 321
+Example2: x = -123, return -321
+```
